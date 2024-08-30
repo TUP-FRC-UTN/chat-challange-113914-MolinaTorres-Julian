@@ -1,6 +1,7 @@
-<div class="caja-mensaje-usuario">
+<div class="caja-mensaje-usuario border p-2">
     <h3>Usuario: {{nombre}}</h3>
     <h4>Mensaje</h4>
     <textarea name="" id="" rows="2" cols="30" [(ngModel)]="mensaje"></textarea>
-    <button class="btn btn-primary" (click)="emitirDatos()">Guardar</button>
+    <br>
+    <button class="btn btn-primary mt-3" (click)="emitirDatos()">Guardar</button>
 </div>

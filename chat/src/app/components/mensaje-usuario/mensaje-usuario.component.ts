@@ -19,5 +19,7 @@ export class MensajeUsuarioComponent {
       nombre: this.nombre,
       mensaje: this.mensaje
     });
+
+    this.mensaje = "";
   }
 }
