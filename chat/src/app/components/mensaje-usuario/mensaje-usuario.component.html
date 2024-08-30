@@ -1,1 +1,6 @@
-<p>mensaje-usuario works!</p>
+<div class="caja-mensaje-usuario">
+    <h3>Usuario: {{nombre}}</h3>
+    <h4>Mensaje</h4>
+    <textarea name="" id="" rows="2" cols="30" [(ngModel)]="mensaje"></textarea>
+    <button class="btn btn-primary" (click)="emitirMensaje()">Guardar</button>
+</div>

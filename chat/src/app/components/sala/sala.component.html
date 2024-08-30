@@ -1,1 +1,14 @@
-<p>sala works!</p>
+<h1>Sala de Chat</h1>
+<h2>Conversación</h2>
+<ol>
+    @for (mensaje of mensajes; track mensaje; ) {
+        <li>{{mensaje}}</li>
+    }
+</ol>
+
+<app-mensaje-usuario 
+    [nombre]="'Pepe'"
+    (mensajeEmitido)="recibirMensaje($event)"/>
+<app-mensaje-usuario 
+    [nombre]="'María'"
+    (mensajeEmitido)="recibirMensaje($event)"/>
