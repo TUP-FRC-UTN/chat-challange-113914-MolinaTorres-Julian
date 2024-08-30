@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { MensajeUsuarioComponent } from "../mensaje-usuario/mensaje-usuario.component";
+import { InfoMensaje } from '../../interfaces/info-mensaje';
 
 @Component({
   selector: 'app-sala',
@@ -9,11 +10,10 @@ import { MensajeUsuarioComponent } from "../mensaje-usuario/mensaje-usuario.comp
   styleUrl: './sala.component.css'
 })
 export class SalaComponent {
-  mensajes: string[] = [];
+  infoMensaje: InfoMensaje[] = [];
   nombre: string = "";
 
-  recibirMensaje(mensaje: string) {
-    this.mensajes.push(mensaje);
+  recibirDatos(datos: InfoMensaje) {
+    this.infoMensaje.push(datos);
   }
-
 }

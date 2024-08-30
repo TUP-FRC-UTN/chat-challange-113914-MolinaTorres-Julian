@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { InfoMensaje } from '../../interfaces/info-mensaje';
 
 @Component({
   selector: 'app-mensaje-usuario',
@@ -10,11 +11,13 @@ import { FormsModule } from '@angular/forms';
 })
 export class MensajeUsuarioComponent {
   @Input() nombre: string = "";
-  @Output() mensajeEmitido = new EventEmitter<string>();
+  @Output() datosEmitidos = new EventEmitter<InfoMensaje>();
   mensaje: string = "";
 
-  emitirMensaje() {
-    this.mensajeEmitido.emit(this.mensaje);
-    this.mensaje = "";
+  emitirDatos() {
+    this.datosEmitidos.emit({
+      nombre: this.nombre,
+      mensaje: this.mensaje
+    });
   }
 }
