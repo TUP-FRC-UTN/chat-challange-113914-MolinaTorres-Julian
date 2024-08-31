@@ -1,15 +1,18 @@
-<div class="caja-sala">
-    <h1>Sala de Chat</h1>
-    <h2>Conversación</h2>
-    <ol>
-        @for (info of infoMensaje; track info; ) {
-        <li>{{info.nombre}} dice: {{info.mensaje}}</li>
-        }
-    </ol>
+<div class="card m-4">
+    <div class="card-header">
+        Sala de Chat
+    </div>
+    <div class="card-body">
+        <h3 class="card-title">Conversación</h3>
+        <ol>
+            @for (info of infoMensaje; track info; let i = $index) {
+            <li>{{info.nombre}} dice: {{info.mensaje}}</li>
+            }
+        </ol>
 
-    <div class="componente-hijo d-flex gap-4">
-        <app-mensaje-usuario [nombre]="'Pepe'" (datosEmitidos)="recibirDatos($event)"/>
-        <br>
-        <app-mensaje-usuario [nombre]="'María'" (datosEmitidos)="recibirDatos($event)"/>
+        <div class="componente-hijo d-flex gap-2">
+            <app-mensaje-usuario [nombre]="'Pepe'" (datosEmitidos)="recibirDatos($event)" class="w-50" />
+            <app-mensaje-usuario [nombre]="'María'" (datosEmitidos)="recibirDatos($event)" class="w-50" />
+        </div>
     </div>
 </div>
