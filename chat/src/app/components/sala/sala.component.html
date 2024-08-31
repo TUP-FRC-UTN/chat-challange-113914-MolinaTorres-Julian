@@ -6,7 +6,8 @@
         <h3 class="card-title">Conversación</h3>
         <ol>
             @for (info of infoMensaje; track info; let i = $index) {
-            <li>{{info.nombre}} dice: {{info.mensaje}}</li>
+            <li [ngClass]="{'text-primary': info.nombre == 'Pepe', 'text-success': info.nombre == 'María'}"
+                class="list-unstyled">{{info.nombre}} dice: {{info.mensaje}}</li>
             }
         </ol>
 
