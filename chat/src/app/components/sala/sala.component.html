@@ -1,0 +1,19 @@
+<div class="card m-4">
+    <div class="card-header">
+        Sala de Chat
+    </div>
+    <div class="card-body">
+        <h3 class="card-title">Conversación</h3>
+        <ol>
+            @for (info of infoMensaje; track info; let i = $index) {
+            <li [ngClass]="{'text-primary': info.nombre == 'Pepe', 'text-success': info.nombre == 'María'}"
+                class="list-unstyled">{{info.nombre}} dice: {{info.mensaje}}</li>
+            }
+        </ol>
+
+        <div class="componente-hijo d-flex gap-2">
+            <app-mensaje-usuario [nombre]="'Pepe'" (datosEmitidos)="recibirDatos($event)" class="w-50" />
+            <app-mensaje-usuario [nombre]="'María'" (datosEmitidos)="recibirDatos($event)" class="w-50" />
+        </div>
+    </div>
+</div>
